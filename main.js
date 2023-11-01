@@ -60,7 +60,6 @@ function toggleMenu() {
     burger.classList.toggle('d-block')
     menu.classList.toggle('ouvert')
     iconeRetour.classList.toggle('fs-1')
-
 }
 
 window.addEventListener("resize", () => {
@@ -75,16 +74,17 @@ window.addEventListener("resize", () => {
 
 
 const colors = [
-    'dormeur',
-    'timide',
-    'goodColor',
     'falseColor',
+    'prof',
     'dash',
+    'grincheux',
+    'goodColor',
+    'violet1',
     'joyeux',
     'simplet',
-    'prof',
-    'atchoum',
-    'grincheux'
+    'timide',
+    'dormeur',
+    'atchoum'
 ];
 
 const root = document.documentElement

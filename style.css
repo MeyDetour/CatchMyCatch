@@ -1,18 +1,125 @@
 :root {
-    --dormeur: grey;
-    --timide: #444654;
-    --goodColor: green;
     --falseColor: red;
-    --dash: #141717;
-    --joyeux: #7f05ff;
-    --simplet: #401d64;
     --prof: #3f2f59;
-    --atchoum: #b7b7b7;
+    --dash: #141717;
     --grincheux: white;
-    --violet1 : #6a0be57d ;
+    --goodColor: green;
+    --violet1: #6a0be5;
 
+    --joyeux: #7f05ff;
+    --simplet: #3a1f57; /* Violet plus clair */
+    --timide: #444654; /* Noir-Gris foncé */
+    --dormeur: grey; /* Noir-Gris clair */
+    --atchoum: #b7b7b7; /* Blanc */
 }
 
+/*============CLASSE INDEX=============  */
+.index-fond {
+    background: radial-gradient(var(--atchoum), var(--prof));
+}
+.index-fond > h1 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(var(--joyeux), var(--prof)) ;
+    -webkit-background-clip: text;
+    text-shadow: 0px 0px 30px var(--atchoum);
+    -webkit-text-fill-color: transparent;}
+
+
+.class-1,.class-5 ,.class-2,.class-3,.class-4{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: linear-gradient(to right , var(--joyeux), var(--prof)) ;
+
+}
+.class-1,.class-5{
+    animation: rotate 5s linear infinite;
+}
+.class-2,.class-4{
+    animation: taille1  5s linear infinite ;
+}
+.class-3{
+    animation: taille2  5s  linear infinite ;
+}
+@keyframes taille1 {
+    0%{
+        height:250px;
+        rotate: y 0deg;
+    }
+    50%{
+        height:45vh;
+    }
+    100%{
+        height:250px;
+        rotate: y 360deg;
+    }
+}
+@keyframes taille2 {
+    0%{
+        height:250px;
+        rotate: y 0deg;
+    }
+    50%{
+        height:65vh;
+    }
+    100%{
+        height:250px;
+        rotate: y 360deg;
+    }
+}
+@keyframes rotate {
+    0%{
+        rotate: y 0deg;
+    }
+    100%{
+        rotate: y 360deg;
+    }
+}
+@media only screen and (max-width: 1350px ) {
+    .class-1,.class-5 ,.class-2,.class-3,.class-4 {
+        width: 210px;
+        height: 210px;
+    }
+}
+@media only screen and (max-width: 1080px ) {
+    .class-1,.class-5 ,.class-2,.class-3,.class-4 {
+        width: 150px;
+        height: 150px;
+    }
+}
+@media only screen and (max-width: 780px ) {
+    .class-1,.class-5 ,.class-2,.class-3,.class-4 {
+        width: 78px;
+        height: 78px;
+    }
+    @keyframes taille1 {
+        0%{
+            height:250px;
+            rotate: y 0deg;
+        }
+        50%{
+            height:30vh;
+        }
+        100%{
+            height:250px;
+            rotate: y 360deg;
+        }
+    }
+    @keyframes taille2 {
+        0%{
+            height:250px;
+            rotate: y 0deg;
+        }
+        50%{
+            height:50vh;
+        }
+        100%{
+            height:250px;
+            rotate: y 360deg;
+        }
+    }
+}
+/*============CLASSE GENERALE=============  */
 body {
     margin: 0px;
     overflow-y: hidden;
@@ -48,6 +155,8 @@ body {
     height: 100vh;
 }
 
+
+
 .lien-container {
     display: flex;
     flex-direction: column;
@@ -62,6 +171,7 @@ body {
 #menuNavbar {
     width: 20%;
     height: 100%;
+
     background: linear-gradient(to top, var(--violet1) 20%, rgba(255, 255, 255, 0.16) 50%);;
     box-shadow: 0px 0px 10px inset var(--simplet);
 }
@@ -76,7 +186,7 @@ body {
     display: none;
 }
 
-.fondburger, .menu-fond ,  .menuResponsive {
+.fondburger, .menu-fond, .menuResponsive {
     background: linear-gradient(to top, var(--joyeux) 20%, rgba(255, 255, 255, 0.16) 100%);
     box-shadow: 0px 0px 10px inset var(--simplet);
 }
@@ -86,7 +196,8 @@ body {
     height: 18%;
 
 }
-.menuResponsive{
+
+.menuResponsive {
     width: 0vw;
     height: 100vh;
     position: absolute;
@@ -94,6 +205,7 @@ body {
     right: 0;
     transition: width 1s;
 }
+
 .lien-menu {
     text-decoration: none;
 
@@ -190,6 +302,7 @@ body {
     .entrance-right {
         animation: entranceright 2s ease 0s 1 normal forwards;
     }
+
     .ouvert {
         width: 100vw !important;
     }
@@ -201,10 +314,10 @@ body {
         background: linear-gradient(to right, var(--violet1) 20%, rgba(255, 255, 255, 0.16) 120%);;
     }
 
-.ouvert>.lien-container{
-    display:   flex;
+    .ouvert > .lien-container {
+        display: flex;
 
-}
+    }
 
     .lien-container {
         display: none;
