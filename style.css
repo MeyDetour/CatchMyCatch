@@ -156,7 +156,9 @@ body {
     justify-content: center;
     align-items: center
 }
-
+a{
+    text-decoration: none;
+}
 .z-1 {
     z-index: 1
 }
@@ -164,19 +166,27 @@ body {
 .z--1 {
     z-index: -1
 }
-
+img{
+    border-radius: 50%;
+    border: var(--timide) 2px solid;
+}
 /*============STYLE MENU=============  */
 .navbarMain{
     width: 100vw;
     height: 100vh;
     position: absolute;
-    background-color: var(--dormeur);
+    background-color: var(--timide);
 }
 .fond {
     position: absolute;
     right: 0%;
     width: 85%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
 }
 
 .lien-container2{

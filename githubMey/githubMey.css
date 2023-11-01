@@ -1,11 +1,7 @@
-.container {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1.2fr 1fr 0.8fr 1fr 1fr;
-    gap: 0px 0px;
-}
+
 .container {  display: grid;
+    margin: 1%;
+    height: 97%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1.2fr 1fr 0.8fr 1.1fr [profilGithub] 0.9fr;
     grid-auto-columns: 1fr;
@@ -13,17 +9,29 @@
     grid-auto-flow: row;
     grid-template-areas:
     "profilGithubAvatar profilGithubNom"
-    "profilGithubBio profilGithubId"
+    "profilGithubAvatar profilGithubId"
     "profilGithubBio profilGithubDate"
     "profilGithubAmi profilGithubDepot"
     "profilGithubAmi profilGithubDepot";
 }
+.container>div{
+    color: var(--atchoum);
+    padding: 19px;
+    margin: 8px;
+    border-radius: 20px;
+    border: var(--simplet) 3px solid;
+    background: linear-gradient(var(--prof),var(--simplet));
+}
 
-.profilGithubAvatar { grid-area: profilGithubAvatar; }
-
+.profilGithubAvatar { grid-area: profilGithubAvatar;
+}
+.profilGithubAvatar>img{
+    box-shadow: 0px 0px 3em var(--violet1);
+}
 .profilGithubNom { grid-area: profilGithubNom; }
 
 .profilGithubBio { grid-area: profilGithubBio; }
+
 
 .profilGithubId { grid-area: profilGithubId; }
 
@@ -38,6 +46,8 @@
 
     .container-responsive {
         display: grid;
+        width: 100%;
+        height: 100%;
         grid-auto-columns: 1fr;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1.2fr 1fr 0.8fr 1fr 1fr;

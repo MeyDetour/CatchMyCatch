@@ -78,7 +78,6 @@ window.addEventListener("resize", () => {
         fermerMenu()
     }
 
-
 })
 
 
