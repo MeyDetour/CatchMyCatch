@@ -37,7 +37,12 @@
 
 .profilGithubDate { grid-area: profilGithubDate; }
 
-.profilGithubDepot { grid-area: profilGithubDepot; }
+
+.profilGithubAmi,.profilGithubDepot{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.profilGithubDepot { grid-area: profilGithubDepot;}
 
 .profilGithubAmi { grid-area: profilGithubAmi; }
 
