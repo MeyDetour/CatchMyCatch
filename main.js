@@ -3,21 +3,6 @@
 //menu
 let navbarMain = document.querySelector('.navbarMain')
 
-const container_responsive_lien = `
-   <div class="lien-container h-60  p-3 w-100 br-60  justify-content-evenly align-items-center ">
-     
-  <div class="menu-fond w6a0be57d-100 h-18 br-30 centered entrance-left "><a href="githubMey.html"
-                    class="lien-menu tx-timide fsz-1">Mon profil Github</a></div>
-            <div class="menu-fond w-100 h-18 br-30 centered entrance-right"><a href="githubClasse.html"
-                    class="lien-menu tx-timide fsz-1">Autre profil</a></div>
-            <div class="menu-fond w-100 h-18 br-30 centered entrance-left"><a href="chuckNoris.html"
-                    class="lien-menu tx-timide fsz-1">Chuck Noris</a></div>
-            <div class="menu-fond w-100 h-18 br-30 centered entrance-right"><a href="donneeDivers.html"
-                    class="lien-menu tx-timide fsz-1">Météo</a></div>
-            <div class="menu-fond w-100 h-18 br-30 centered entrance-left"><a href="pokedex.html"
-                    class="lien-menu tx-timide fsz-1">Pokedex</a></div>
-       </div>
-`
 navbarMain.innerHTML = `
 
     <nav id="menuNavbar" class=" ps-abs top-0 left-0 p-rel">
@@ -32,40 +17,68 @@ navbarMain.innerHTML = `
 
             </div>
         </div>
-          ${container_responsive_lien}
+    <div class="lien-container h-60  p-3 w-100 br-60  justify-content-evenly align-items-center ">
+     
+  <div class="menu-fond w6a0be57d-100 h-18 br-30 centered entrance-left "><a href="githubMey.html"
+                    class="lien-menu fsz-1">Mon profil Github</a></div>
+            <div class="menu-fond w-100 h-18 br-30 centered entrance-right"><a href="githubClasse.html"
+                    class="lien-menu fsz-1">Autre profil</a></div>
+            <div class="menu-fond w-100 h-18 br-30 centered entrance-left"><a href="chuckNoris.html"
+                    class="lien-menu fsz-1">Chuck Noris</a></div>
+            <div class="menu-fond w-100 h-18 br-30 centered entrance-right"><a href="donneeDivers.html"
+                    class="lien-menu fsz-1">Météo</a></div>
+            <div class="menu-fond w-100 h-18 br-30 centered entrance-left"><a href="pokedex.html"
+                    class="lien-menu fsz-1">Pokedex</a></div>
+       </div>
        
         <div class="menuResponsive bg-timide">
-            <i id='iconeBack' onclick="fermerMenu()" class="bi bi-arrow-return-left  m-2 fsz-2 tx-joyeux d-block "></i>
-   
+            <i id='iconeBack' onclick="fermerMenu()" class="bi bi-arrow-return-left  m-2 tx-grincheux d-block "></i>
+     <div class="lien-container2 h-60  p-3 w-100 br-60  justify-content-evenly align-items-center ">
+     
+  <div class="menu-fond w6a0be57d-100 h-18 br-30 centered entrance-left "><a href="githubMey.html"
+                    class="lien-menu fsz-1">Mon profil Github</a></div>
+            <div class="menu-fond w-100 h-18 br-30 centered entrance-right"><a href="githubClasse.html"
+                    class="lien-menu fsz-1">Autre profil</a></div>
+            <div class="menu-fond w-100 h-18 br-30 centered entrance-left"><a href="chuckNoris.html"
+                    class="lien-menu fsz-1">Chuck Noris</a></div>
+            <div class="menu-fond w-100 h-18 br-30 centered entrance-right"><a href="donneeDivers.html"
+                    class="lien-menu fsz-1">Météo</a></div>
+            <div class="menu-fond w-100 h-18 br-30 centered entrance-left"><a href="pokedex.html"
+                    class="lien-menu fsz-1">Pokedex</a></div>
+       </div>
         </div>
     </nav>
 `
-
-
+let liens = document.querySelector('.lien-container2')
+let fond = document.querySelector('.fond')
 let burger = document.querySelector('.burger-container')
 let menu = document.querySelector('.menuResponsive')
+
 let iconeRetour = document.getElementById('iconeBack')
 
 function ouvrirMenu() {
     toggleMenu()
-    menu.innerHTML += container_responsive_lien
 }
 
 function fermerMenu() {
     toggleMenu()
-    menu.innerHTML = ''
 }
 
 function toggleMenu() {
     burger.classList.toggle('d-block')
     menu.classList.toggle('ouvert')
+liens.classList.toggle('d-flex')
     iconeRetour.classList.toggle('fs-1')
+    fond.classList.toggle('d-none')
+
 }
 
 window.addEventListener("resize", () => {
     if (menu.classList.contains('ouvert')) {
         fermerMenu()
     }
+
+
 })
 
 
