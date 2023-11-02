@@ -4,12 +4,12 @@ let bioContainer = document.querySelector('.profilGithubBio');
 let idContainer = document.querySelector('.profilGithubId');
 let dateContainer = document.querySelector('.profilGithubDate');
 let depotContainer = document.querySelector('.profilGithubDepot');
-let amiContainer = document.querySelector('.profilGithubAmi');
+let amiContainer = document.querySelector('.liste-ami-scroll-container');
 
 
-async function getData(nomGithub) {
+async function getDataUser(nomGithub) {
 //parametre : nom d'un profil github (string) Renvoie le fichier json deserialise
-    return await fetch('https://api.github.com/users/MeyDetour')
+    return await fetch(`https://api.github.com/users/${nomGithub}`)
         .then(response => response.json())
         .then(data => {
             return data
@@ -18,7 +18,7 @@ async function getData(nomGithub) {
 async function creerDicoInformation(nomgithub) {
     //parametre : nom d'un profil github et renvoie un dictionnaire {information : valeur }
     let dico = {}
-    const dataProfil = await getData(nomgithub)
+    const dataProfil = await getDataUser(nomgithub)
     information.forEach((info) => {
         dico[info] = dataProfil[info]
     })
@@ -31,16 +31,57 @@ function transformerDate(date){
 return formattedDate
 }
 
+async function getData(lien){
+    return await fetch(lien)
+        .then(response=>response.json())
+        .then(data =>{
+            return data
+            }
+        )
+}
 
 
 //remplissage des donnees du fichier githubMey.html
 creerDicoInformation('MeyDetour').then(data => {
     const infoMey = data
     document.getElementById('imageMey').src = infoMey['avatar_url']
-    nomContainer.innerHTML += `<div class="d-flex flex-column "><h1 class="tx-violet1">${infoMey['name']}</h1><h4><b>Login : </b>${infoMey['login']}</h4><span><b>Following :</b> <a class="tx-joyeux" href="${infoMey['following_url']}">${infoMey['following']}</a></span><span><b>Followers :</b> <a class="tx-joyeux" href="${infoMey['followers_url']}">${infoMey['followers']}</a></span></div>`
+    nomContainer.innerHTML += `<div class="d-flex flex-column "><h1 class="tx-violet1">${infoMey['name']}</h1><h4><b>Login : </b>${infoMey['login']}</h4><span><b>Following :</b> ${infoMey['following']}</span><span><b>Followers :</b>${infoMey['followers']}</span></div>`
     bioContainer.innerHTML +=` <div class="d-flex flex-column "><p class="text-bio">${infoMey['bio']}</p></div>`
-    idContainer.innerHTML+=` <div class="d-flex flex-column "><span><b>id profil : </b>${infoMey['id']}}</span><a href="${infoMey['html_url']}"  class="tx-joyeux">Regarde mon profil !</a><span><b>Type d'utilisateur :</b> ${infoMey['type']}</span><span><b>Localisation :</b> ${infoMey['location']}</span></div>`
+    idContainer.innerHTML+=` <div class="d-flex flex-column "><span><b>id profil : </b>${infoMey['id']}</span><a href="${infoMey['html_url']}"  class="tx-joyeux">Regarde mon profil !</a><span><b>Type d'utilisateur :</b> ${infoMey['type']}</span><span><b>Localisation :</b> ${infoMey['location']}</span></div>`
     dateContainer.innerHTML +=` <div class="d-flex flex-column "><span><b>Date de creation du compte: </b>${transformerDate(infoMey['created_at'])}</span><span><b>Derniere profil MAJ :</b> ${transformerDate(infoMey['updated_at'])}</span></div>`
+    depotContainer.innerHTML += `<div><b>Nombre de depot public :</b>${infoMey['public_repos']}</div>`
+    getData(infoMey['repos_url']).then(data =>{
+        const depots = data
+        depots.forEach(depot=>{
+            depotContainer.innerHTML +=
+                `
+       <div class="scroll-div-repo">
+       <span><b>Name : </b>${depot['name']}</span>
+       <div class="barre-between"></div>
+       <span><b>id : </b>${depot['id']}</span>
+       <div class="barre-between"></div>
+       <a href="${depot['homepahe']}">lien du depot</a>
+       <div class="barre-between"></div>
+       <span><b>Proprietraire : </b>${depot['owner']['login']}</span>
+       <div class="barre-between"></div>
+       <span><b>Dernier Update : </b>${transformerDate(depot['updated_at'])}</span>
+       <div class="barre-between"></div>
+       <span><b>Visibilité : </b>${depot['visibility']}</span>
+    `
+
+        })
+    })
+    getData('https://api.github.com/users/MeyDetour/following').then(data=>{
+        const follows = data
+        follows.forEach((follow)=>{
+            amiContainer.innerHTML+=`
+            <div class="scroll-ami-profil br-20"><img src="${follow['avatar_url']}" width="60px" height="60px" alt=""><h5>${follow['login']}</h5></div>
+            `
+        })
+        }
+    )
+
+
 
 })
 
