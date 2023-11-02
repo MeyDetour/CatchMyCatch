@@ -23,7 +23,7 @@ async function creerDicoInformation(nomgithub) {
 creerDicoInformation('esdlyonb1').then(data=>{
     const infoEsd = data
     profilContainer.innerHTML+=`
-    <div class="d-flex flex-row align-items-center "><img src="${infoEsd['avatar_url']}" width="250px" height="250px" alt=""><h1>${infoEsd['login']}</h1></div>
+    <div class="d-flex flex-row align-items-center "><img src="${infoEsd['avatar_url']}" width="170px" height="170px" alt=""><h1>${infoEsd['login']}</h1></div>
     `
     fetch('https://api.github.com/users/esdlyonb1/followers')
         .then(response=>response.json())
