@@ -55,3 +55,16 @@
     width: 100%;
     color: var(--grincheux);
 }
+
+@media only screen and (max-width: 1048px) {
+    .container {  display: grid;
+        grid-template-columns: 1fr  1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+    "boutonRandom generateJoke "
+    "boutonCategorie boutonCategorie  ";
+    }
+    .bouton{    padding: 13px;
+
+    }
+}

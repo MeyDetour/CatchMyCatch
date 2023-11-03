@@ -6,13 +6,19 @@ const villeCoordHoraireElements = document.querySelector('.villeCoordHoraire');
 const villeTempElements = document.querySelector('.villeTemp');
 const villeDescElements = document.querySelector('.villeDesc');
 const villeCoordVentElements = document.querySelector('.villeCoordVent');
+let villeSubject = ""
 
 function ville(ville) {
     inputville.value = ville
-    inputville.ariaPlaceholder = ville
+    villeSubject = ville
+}
+function inputdonne(){
+    chargerDonnee(inputville.value)
 }
 
-
+window.addEventListener('DOMContentLoaded',()=>{
+    chargerDonnee('Lyon')
+})
 
 function chargeIcon(code) {
     fetch('https://www.weatherapi.com/docs/conditions.json')
@@ -78,8 +84,7 @@ function descriptionTemps(val){
     return "Description non disponible pour cette condition météorologique."
     }
 
-function chargerDonnee() {
-    let ville = inputville.value
+function chargerDonnee(ville) {
 
     fetch(`http://api.weatherapi.com/v1/current.json?key=f41a114c17fc4874bb8145830230311&q=${ville}`)
         .then(response => {
@@ -96,7 +101,7 @@ function chargerDonnee() {
 
             villeNomElements.innerHTML = `
                <div class="d-flex flex-column align-items-center ">
-                  <h1>${villeLocation.name}</h1>
+                  <h1 class="tx-joyeux">${villeLocation.name}</h1>
                   <img src="http:${villeDesc.icon}" alt="" width="200px" height="200px" srcset="">
                </div>
                <div class="d-flex flex-column align-items-center ">
@@ -120,7 +125,7 @@ function chargerDonnee() {
             `
             villeDescElements.innerHTML =`
     <div class="d-flex flex-column align-items-start ">
-         <psan>${villeDesc.text}${descriptionTemps(villeDesc.text)}</psan>
+         <psan>${descriptionTemps(villeDesc.text)}</psan>
        </div> 
             `
             villeCoordVentElements.innerHTML  =`

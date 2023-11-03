@@ -14,22 +14,26 @@
 </head>
 <body>
 <div class="navbarMain"></div>
-<div class="fond bg-timide ">
-    <div class="centered d-flex flex-column ">
-        <div class="d-flex flex-row">
-            <button onclick="ville('Paris')">Paris</button>
-            <button onclick="ville('Lyon')">Lyon</button>
-            <button onclick="ville('New York')">New York</button>
-            <button onclick="ville('Tokyo')">Tokyo</button>
-            <button onclick="ville('London')">London</button>
-            <button onclick="ville('Los Angeles')">Los Angeles</button>
-            <button onclick="ville('Sydney')">Sydney</button>
-        </div>
-        <span class="textErreur tx-violet1 "></span>
-        <input id="nameVille" type="text" value="" placeholder="Entrez le nom d'une ville"></input>
-        <button onclick="chargerDonnee()" type="submit">Charger</button>
-    </div>
+<div class="fond pt-5 bg-timide ">
+
     <div class="container">
+        <div class=" villeSearch centered d-flex flex-column ">
+            <span class="textErreur tx-violet1 "></span>
+            <div class="d-flex flex-row flex-wrap">
+            <div class=" boutonVille d-flex flex-row flex-wrap">
+                <button onclick="ville('Paris')">Paris</button>
+                <button onclick="ville('Lyon')">Lyon</button>
+                <button onclick="ville('New York')">New York</button>
+                <button onclick="ville('Tokyo')">Tokyo</button>
+                <button onclick="ville('London')">London</button>
+                <button onclick="ville('Los Angeles')">Los Angeles</button>
+                <button onclick="ville('Sydney')">Sydney</button>
+            </div>
+            <input id="nameVille" type="text" value="" placeholder="Entrez le nom d'une ville"></input>
+            <button id="submitbutton" onclick="inputdonne()" type="submit">Charger</button>
+        </div>
+        </div>
+
         <div class="villeNom d-flex flex-row justify-content-around ">
 
         </div>
