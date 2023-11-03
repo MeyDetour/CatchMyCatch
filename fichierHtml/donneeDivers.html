@@ -1,19 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="../style.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../meteo/meteo.css">
+    <title>Document</title>
 </head>
 <body>
 <div class="navbarMain"></div>
 <div class="fond bg-timide ">
+    <div class="centered d-flex flex-column ">
+        <div class="d-flex flex-row">
+            <button onclick="ville('Paris')">Paris</button>
+            <button onclick="ville('Lyon')">Lyon</button>
+            <button onclick="ville('New York')">New York</button>
+            <button onclick="ville('Tokyo')">Tokyo</button>
+            <button onclick="ville('London')">London</button>
+            <button onclick="ville('Los Angeles')">Los Angeles</button>
+            <button onclick="ville('Sydney')">Sydney</button>
+        </div>
+        <span class="textErreur tx-violet1 "></span>
+        <input id="nameVille" type="text" value="" placeholder="Entrez le nom d'une ville"></input>
+        <button onclick="chargerDonnee()" type="submit">Charger</button>
+    </div>
+    <div class="container">
+        <div class="villeNom d-flex flex-row justify-content-around ">
+
+        </div>
+        <div class="villeCoordHoraire"></div>
+        <div class="villeTemp"></div>
+        <div class="villeDesc"></div>
+        <div class="villeCoordVent"></div>
+    </div>
 
 
 </div>
@@ -22,7 +46,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-
+<script src="../meteo/meteo.js"></script>
 <script src="../main.js"></script>
 </body>
 </html>
