@@ -10,13 +10,14 @@ let villeSubject = ""
 
 function ville(ville) {
     inputville.value = ville
-    villeSubject = ville
+    chargerDonnee(ville)
 }
 function inputdonne(){
     chargerDonnee(inputville.value)
 }
 
 window.addEventListener('DOMContentLoaded',()=>{
+    villeNomElements.style.backgroundSize = 'cover'
     chargerDonnee('Lyon')
 })
 
@@ -32,60 +33,183 @@ function windDIrection(val){
     return dico[val]
 }
 function descriptionTemps(val){
-    if (val === "Partly cloudy" ){return  "Le ciel est partiellement nuageux, affichant un mélange de nuages et d'éclaircies."}
-    if (val === "Overcast" ){return  "Le ciel est couvert de nuages, créant une atmosphère sombre et uniforme."}
-    if (val === "Moderate rain" ){return "Une pluie modérée tombe doucement du ciel, créant une ambiance apaisante et rafraîchissante."}
-    if (val === "Fog" ){return  "Un épais brouillard enveloppe l'environnement, réduisant la visibilité. "}
-    if (val === "Clear" ){return  "Le ciel est dégagé, sans nuages visibles."}
-    if (val === "Sunny" ){return "Le temps est ensoleillé, avec un ciel dégagé et lumineux."}
-    if (val === "Moderate rain" ){return "Le ciel est dégagé, sans nuages visibles."}
-    if (val === "Moderate or heavy rain in area with thunder" ){return  "Pluie modérée ou forte avec des éclairs dans la région."}
-    if (val === "Ice pellets"){return "Présence de grésil."}
-    if (val === "Light rain shower"){return "Légères averses de pluie."}
-    if (val === "Torrential rain shower"){return "Averses de pluie torrentielles."}
-    if (val === "Light sleet showers"){return "Légères averses de grésil."}
-    if (val === "Light snow showers"){return "Légères averses de neige."}
-    if (val === "Moderate or heavy snow showers"){return "Averses de neige modérées ou fortes."}
-    if (val === "Light showers of ice pellets"){return "Légères averses de grêlons."}
-    if (val === "Moderate or heavy showers of ice pellets"){return "Averses de grêlons modérées ou fortes."}
-    if (val === "Patchy light rain in area with thunder"){return "Pluie légère dans la région avec des éclairs."}
-    if (val === "Moderate or heavy rain in area with thunder"){return "Pluie modérée ou forte dans la région avec des éclairs."}
-    if (val === "Patchy light snow in area with thunder"){return "Chutes de neige légères dans la région avec des éclairs."}
-    if (val === "Moderate or heavy snow in area with thunder"){return "Chutes de neige modérées ou fortes dans la région avec des éclairs."}
-    if (val === "Sunny"){return "Le temps est ensoleillé, avec un ciel dégagé et lumineux."}
-    if (val === "Cloudy"){return "Le ciel est nuageux."}
-    if (val === "Mist"){return "Brouillard."}
-    if (val === "Patchy rain nearby"){return "Pluie sporadique à proximité."}
-    if (val === "Patchy snow nearby"){return "Chutes de neige sporadiques à proximité."}
-    if (val === "Patchy sleet nearby"){return "Présence de grésil sporadique à proximité."}
-    if (val === "Patchy freezing drizzle nearby"){return "Pluie verglaçante sporadique à proximité."}
-    if (val === "Thundery outbreaks in nearby"){return "Orages à proximité."}
-    if (val === "Blowing snow"){return "Chutes de neige poudreuse."}
-    if (val === "Blizzard"){return "Blizzard."}
-    if (val === "Freezing fog"){return "Brouillard givrant."}
-    if (val === "Patchy light drizzle"){return "Légère bruine."}
-    if (val === "Light drizzle"){return "Bruine légère."}
-    if (val === "Freezing drizzle"){return "Bruine verglaçante."}
-    if (val === "Heavy freezing drizzle"){return "Bruine verglaçante intense."}
-    if (val === "Patchy light rain"){return "Légère pluie."}
-    if (val === "Light rain"){return "Pluie légère."}
-    if (val === "Heavy rain at times"){return "Pluie forte par moments."}
-    if (val === "Heavy rain"){return "Pluie forte."}
-    if (val === "Light freezing rain"){return "Légère pluie verglaçante."}
-    if (val === "Moderate or heavy freezing rain"){return "Pluie verglaçante modérée ou forte."}
-    if (val === "Light sleet"){return "Grésil léger."}
-    if (val === "Moderate or heavy sleet"){return "Grésil modéré ou fort."}
-    if (val === "Patchy light snow"){return "Chutes de neige légères."}
-    if (val === "Light snow"){return "Chutes de neige légères."}
-    if (val === "Patchy moderate snow"){return "Chutes de neige modérées."}
-    if (val === "Moderate snow"){return "Chutes de neige modérées."}
-    if (val === "Patchy heavy snow"){return "Chutes de neige fortes."}
-    if (val === "Heavy snow"){return "Chutes de neige fortes."}
+    if (val === "Partly cloudy") {
+        villeNomElements.style.backgroundImage = 'url("../image/nuage.png")';
+        return "Le ciel est partiellement nuageux, affichant un mélange de nuages et d'éclaircies.";
+    }
+
+    if (val === "Overcast") {
+        villeNomElements.style.backgroundImage = 'url("../image/nuage.png")';
+        return "Le ciel est couvert de nuages, créant une atmosphère sombre et uniforme.";
+    }
+
+    if (val === "Moderate rain") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")';
+        return "Une pluie modérée tombe doucement du ciel, créant une ambiance apaisante et rafraîchissante.";
+    }
+
+    if (val === "Fog") {
+        villeNomElements.style.backgroundImage = 'url("../image/brouillard.png")';
+        return "Un épais brouillard enveloppe l'environnement, réduisant la visibilité.";
+    }
+
+    if (val === "Clear") {
+        villeNomElements.style.backgroundImage = 'url("../image/soleil.png")';
+        return "Le ciel est dégagé, sans nuages visibles.";
+    }
+    if (val === "Sunny") {
+        villeNomElements.style.backgroundImage = 'url("../image/soleil.png")';
+        return "Le temps est ensoleillé, avec un ciel dégagé et lumineux.";
+    }
+
+    if (val === "Cloudy") {
+        villeNomElements.style.backgroundImage = 'url("../image/nuage.png")';
+        return "Le ciel est nuageux.";
+    }
+
+    if (val === "Mist") {
+        villeNomElements.style.backgroundImage = 'url("../image/brouillard.png")';
+        return "Brouillard.";
+    }
+
+    if (val === "Patchy rain nearby") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")';
+        return "Pluie sporadique à proximité.";
+    }
+
+    if (val === "Patchy snow nearby") {
+        villeNomElements.style.backgroundImage = 'url("../image/neige.png")';
+        return "Chutes de neige sporadiques à proximité.";
+    }
+
+    if (val === "Patchy sleet nearby") {
+        villeNomElements.style.backgroundImage = 'url("../image/brouillard.png")'; // Vous pouvez ajuster l'image
+        return "Présence de grésil sporadique à proximité.";
+    }
+
+    if (val === "Patchy freezing drizzle nearby") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")'; // Vous pouvez ajuster l'image
+        return "Pluie verglaçante sporadique à proximité.";
+    }
+
+    if (val === "Thundery outbreaks in nearby") {
+        villeNomElements.style.backgroundImage = 'url("../image/eclair.png")';
+        return "Orages à proximité.";
+    }
+
+    if (val === "Blowing snow") {
+        villeNomElements.style.backgroundImage = 'url("../image/neige.png")'; // Vous pouvez ajuster l'image
+        return "Chutes de neige poudreuse.";
+    }
+
+    if (val === "Blizzard") {
+        villeNomElements.style.backgroundImage = 'url("../image/neige.png")'; // Vous pouvez ajuster l'image
+        return "Blizzard.";
+    }
+
+    if (val === "Freezing fog") {
+        villeNomElements.style.backgroundImage = 'url("../image/brouillard.png")';
+        return "Brouillard givrant.";
+    }
+
+    if (val === "Patchy light drizzle") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")'; // Vous pouvez ajuster l'image
+        return "Légère bruine.";
+    }
+
+    if (val === "Light drizzle") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")'; // Vous pouvez ajuster l'image
+        return "Bruine légère.";
+    }
+
+    if (val === "Freezing drizzle") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")'; // Vous pouvez ajuster l'image
+        return "Bruine verglaçante.";
+    }
+
+    if (val === "Heavy freezing drizzle") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")'; // Vous pouvez ajuster l'image
+        return "Bruine verglaçante intense.";
+    }
+
+    if (val === "Patchy light rain") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")'; // Vous pouvez ajuster l'image
+        return "Légère pluie.";
+    }
+
+    if (val === "Light rain") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")';
+        return "Pluie légère.";
+    }
+
+    if (val === "Heavy rain at times") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")';
+        return "Pluie forte par moments.";
+    }
+
+    if (val === "Heavy rain") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")';
+        return "Pluie forte.";
+    }
+
+    if (val === "Light freezing rain") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")'; // Vous pouvez ajuster l'image
+        return "Légère pluie verglaçante.";
+    }
+
+    if (val === "Moderate or heavy freezing rain") {
+        villeNomElements.style.backgroundImage = 'url("../image/pluie.png")'; // Vous pouvez ajuster l'image
+        return "Pluie verglaçante modérée ou forte.";
+    }
+
+    if (val === "Light sleet") {
+        villeNomElements.style.backgroundImage = 'url("../image/brouillard.png")'; // Vous pouvez ajuster l'image
+        return "Grésil léger.";
+    }
+
+    if (val === "Moderate or heavy sleet") {
+        villeNomElements.style.backgroundImage = 'url("../image/brouillard.png")'; // Vous pouvez ajuster l'image
+        return "Grésil modéré ou fort.";
+    }
+    if (val === "Patchy light snow") {
+        villeNomElements.style.backgroundImage = 'url("../image/neige.png")';
+        return "Chutes de neige légères.";
+    }
+
+    if (val === "Light snow") {
+        villeNomElements.style.backgroundImage = 'url("../image/neige.png")';
+        return "Chutes de neige légères.";
+    }
+
+    if (val === "Patchy moderate snow") {
+        villeNomElements.style.backgroundImage = 'url("../image/neige.png")';
+        return "Chutes de neige modérées.";
+    }
+
+    if (val === "Moderate snow") {
+        villeNomElements.style.backgroundImage = 'url("../image/neige.png")';
+        return "Chutes de neige modérées.";
+    }
+
+    if (val === "Patchy heavy snow") {
+        villeNomElements.style.backgroundImage = 'url("../image/neige.png")';
+        return "Chutes de neige fortes.";
+    }
+
+    if (val === "Heavy snow") {
+        villeNomElements.style.backgroundImage = 'url("../image/neige.png")';
+        return "Chutes de neige fortes.";
+    }
+
+// Par défaut, si aucune correspondance n'est trouvée, vous pouvez utiliser une image par défaut
+    villeNomElements.style.backgroundImage = 'url("../image/default.png")';
+
     return "Description non disponible pour cette condition météorologique."
     }
 
 function chargerDonnee(ville) {
 
+    villeNomElements.style.backgroundImage =  'Transparent'
     fetch(`http://api.weatherapi.com/v1/current.json?key=f41a114c17fc4874bb8145830230311&q=${ville}`)
         .then(response => {
             if (!response.ok) {
@@ -101,7 +225,7 @@ function chargerDonnee(ville) {
 
             villeNomElements.innerHTML = `
                <div class="d-flex flex-column align-items-center ">
-                  <h1 class="tx-joyeux">${villeLocation.name}</h1>
+                  <h1 class="bg-prof p-2 br-20 tx-joyeux">${villeLocation.name}</h1>
                   <img src="http:${villeDesc.icon}" alt="" width="200px" height="200px" srcset="">
                </div>
                <div class="d-flex flex-column align-items-center ">

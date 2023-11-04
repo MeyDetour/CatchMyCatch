@@ -25,6 +25,9 @@ img {
     border: var(--simplet) 3px solid;
     background: linear-gradient(var(--prof), var(--simplet));
 }
+.backgroundImage{
+    background-image: url("../image/pluie.png");
+}
 
 .boutonVille > button, #nameVille, #submitbutton {
     border-radius: 20px;
@@ -56,6 +59,7 @@ img {
 
 .villeNom {
     grid-area: villeNom;
+
 }
 
 .villeCoordHoraire {
