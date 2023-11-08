@@ -210,7 +210,7 @@ function descriptionTemps(val){
 function chargerDonnee(ville) {
 
     villeNomElements.style.backgroundImage =  'Transparent'
-    fetch(`http://api.weatherapi.com/v1/current.json?key=f41a114c17fc4874bb8145830230311&q=${ville}`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=f41a114c17fc4874bb8145830230311&q=${ville}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Echec' + response.status)
