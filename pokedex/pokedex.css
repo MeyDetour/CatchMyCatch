@@ -10,6 +10,10 @@
     "pokemonNom pokemonImage pokemonImage"
     "pokemonAutreInfo pokemonAutreInfo pokemonEvolution";
 }
+.imageEvolution{
+    height: 200px;
+    width: 200px;
+}
 .container > div {
     color: var(--atchoum);
     padding: 19px;
@@ -33,9 +37,18 @@ img{
 #namePokemon::placeholder{
     color: var(--grincheux);
 }
+.boutonCharger{
+    flex-direction: row;
+}
+.imgMini{
+    width: 66px;
+    height: 66px;
+    border: 0;
+}
 .pokemonNom { grid-area: pokemonNom; }
 
-.pokemonImage { grid-area: pokemonImage; }
+.pokemonImage { grid-area: pokemonImage;
+}
 
 .pokemonEvolution { grid-area: pokemonEvolution; }
 
@@ -56,9 +69,24 @@ img{
         "pokemonAutreInfo "
     "  pokemonEvolution";
     }
+    #imagePokemon{
+        flex-direction: column;
+    }
+.boutonCharger{
+    flex-direction: column;
+}
+    .container > div {
+        padding: 8px;
+        margin: 3px;
+    }
+
     .imgMini{
         width: 66px;
         height: 66px;
         border: 0;
+    }
+    .imageEvolution{
+        height: 83px;
+        width: 83px;
     }
 }

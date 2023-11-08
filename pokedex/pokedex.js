@@ -30,15 +30,15 @@ function evolution(data, name, id) {
     if (pre !== null) {
         for (const elt of pre) {
             console.log(elt)
-            chaineEvo.innerHTML += `<div class="d-flex flex-column align-items-center"><img width="200px" height="200px" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${elt.pokedexId}.png" alt=""><spand>${elt.name}</spand></div> => `
+            chaineEvo.innerHTML += `<div class="d-flex flex-column align-items-center"><img class="imageEvolution" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${elt.pokedexId}.png" alt=""><spand>${elt.name}</spand></div> => `
         }
     }
-    chaineEvo.innerHTML += `<div class="d-flex flex-column align-items-center"><img width="200px" height="200px" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt=""><spand>${name}</spand></div>`
+    chaineEvo.innerHTML += `<div class="d-flex flex-column align-items-center"><img class="imageEvolution" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png" alt=""><spand>${name}</spand></div>`
 
     if (next !== null) {
         console.log(next)
         for (const elt of next) {
-            chaineEvo.innerHTML += ` => <div class="d-flex flex-column align-items-center"><img width="200px" height="200px" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${elt.pokedexId}.png" alt=""><spand>${elt.name}</spand></div>`
+            chaineEvo.innerHTML += ` => <div class="d-flex flex-column align-items-center"><img class="imageEvolution" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${elt.pokedexId}.png" alt=""><spand>${elt.name}</spand></div>`
         }
     }
 
