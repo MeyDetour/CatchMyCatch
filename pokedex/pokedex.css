@@ -27,15 +27,14 @@ img{
     border-radius: 0%;
 }
 #namePokemon , #submitbutton{
-    background-color: var(--joyeux);
+
     border-radius: 10px;
     font-weight: bold;
     font-size: 1.2em;
-    color: var(--grincheux);
     margin-right: 1em;
 }
 #namePokemon::placeholder{
-    color: var(--grincheux);
+    color: var(--prof);
 }
 .boutonCharger{
     flex-direction: row;
