@@ -23,7 +23,7 @@ async function creerDicoInformation(nomgithub) {
 creerDicoInformation('esdlyonb1').then(data=>{
     const infoEsd = data
     profilContainer.innerHTML+=`
-    <div class="d-flex flex-row align-items-center "><img src="${infoEsd['avatar_url']}" width="170px" height="170px" alt=""><h1>${infoEsd['login']}</h1></div>
+    <div id="follower" class=" d-flex  align-items-center "><img src="${infoEsd['avatar_url']}" width="170px" height="170px" alt=""><h1>${infoEsd['login']}</h1></div>
     `
     fetch('https://api.github.com/users/esdlyonb1/followers')
         .then(response=>response.json())
@@ -31,7 +31,7 @@ creerDicoInformation('esdlyonb1').then(data=>{
             const followers = data
             followers.forEach((follow)=>{
                 followersCOntainer.innerHTML+=`
-            <div class="d-flex mt-3 mb-3 py-4 flex-row align-items-center justify-content-around bg-simplet brd-23"><img src="${follow['avatar_url']}" width="170px" height="170px" alt=""><span>${follow['login']}</span><span><a href="${follow['html_url']}">${follow['id']}</a></span></div>
+            <div id="follower" class="d-flex mt-3 mb-3 py-4  align-items-center justify-content-around bg-simplet brd-23"><img src="${follow['avatar_url']}" width="170px" height="170px" alt=""><span>${follow['login']}</span><span><a href="${follow['html_url']}">${follow['id']}</a></span></div>
             
             `
                 

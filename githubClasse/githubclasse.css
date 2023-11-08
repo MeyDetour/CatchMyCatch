@@ -8,7 +8,9 @@
     "compteEsd-profil"
     "compteEsd-Followers";
 }
-
+#follower{
+    flex-direction: row;
+}
 .container > div {
     color: var(--atchoum);
     padding: 19px;
@@ -20,3 +22,14 @@
 .compteEsd-Followers { grid-area: compteEsd-Followers; }
 
 .compteEsd-profil { grid-area: compteEsd-profil; }
+
+@media only screen and (max-width: 1048px) {
+.container > div {
+    padding: 8px;
+    margin: 3px;
+}
+     #follower{
+        flex-direction: column;
+    }
+
+}
