@@ -46,61 +46,24 @@
         width: 20ch;
     }
 }
-
+.container-rond{
+    animation: rotate 1s linear infinite;
+    height: 300px;
+    width: 300px;
+}
 .class-1, .class-5, .class-2, .class-3, .class-4 {
-    width: 250px;
-    height: 250px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     background: linear-gradient(to right, var(--joyeux), var(--prof));
 
 }
-
-.class-1, .class-5 {
-    animation: rotate 5s linear infinite;
-}
-
-.class-2, .class-4 {
-    animation: taille1 5s linear infinite;
-}
-
-.class-3 {
-    animation: taille2 5s linear infinite;
-}
-
-@keyframes taille1 {
-    0% {
-        height: 250px;
-        rotate: y 0deg;
-    }
-    50% {
-        height: 45vh;
-    }
-    100% {
-        height: 250px;
-        rotate: y 360deg;
-    }
-}
-
-@keyframes taille2 {
-    0% {
-        height: 250px;
-        rotate: y 0deg;
-    }
-    50% {
-        height: 65vh;
-    }
-    100% {
-        height: 250px;
-        rotate: y 360deg;
-    }
-}
-
 @keyframes rotate {
-    0% {
-        rotate: y 0deg;
+    20% {
+        transform: rotateZ(0deg);
     }
     100% {
-        rotate: y 360deg;
+        transform: rotateZ(90deg);
     }
 }
 
@@ -113,15 +76,15 @@
 
 @media only screen and (max-width: 1080px ) {
     .class-1, .class-5, .class-2, .class-3, .class-4 {
-        width: 150px;
-        height: 150px;
+        width: 80px;
+        height: 80px;
     }
 }
 
 @media only screen and (max-width: 780px ) {
     .class-1, .class-5, .class-2, .class-3, .class-4 {
-        width: 78px;
-        height: 78px;
+        width: 50px;
+        height: 50px;
     }
 
     @keyframes taille1 {
